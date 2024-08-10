@@ -3,10 +3,9 @@ import { About } from '../components/About.js';
 import { Contact } from '../components/Contact.js';
 
 const routes = {
-    '/': Home,
-    '/#home': Home,
-    '/#about': About,
-    '/#contact': Contact,
+    '#home': Home,
+    '#about': About,
+    '#contact': Contact,
 };
 
 export const Router = () => {

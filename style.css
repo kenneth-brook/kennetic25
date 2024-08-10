@@ -1,32 +1,74 @@
-/* Lightweight CSS Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
 header {
-    background-color: #333;
+    position: relative;
+    background: url('src/img/riphead.jpg') center/cover no-repeat;
+    height: 250px;
+    overflow: hidden;
+}
+
+.ripple-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 250px;
+    width: 100%;
+    background: url('src/img/riphead.jpg') center/cover no-repeat;
+    opacity: 0.5; /* Reduce opacity */
+    animation: rippleDistortion 8s infinite ease-in-out alternate;
+    pointer-events: none; /* Ensure the overlay doesn't block interactions */
+}
+
+@keyframes rippleDistortion {
+    0% {
+        transform: scale(1) translateY(0);
+        transform: scale(1) translatex(0);
+    }
+    25% {
+        transform: scale(1.02) translateY(10px); /* Increase scale and translate */
+        transform: scale(1.02) translatex(-10px);
+    }
+    50% {
+        transform: scale(1) translatex(0); /* Increase scale and translate */
+        transform: scale(1) translateY(0);
+    }
+    75% {
+        transform: scale(1.02) translateY(-10px); /* Increase scale and translate */
+        transform: scale(1.02) translatex(10px);
+    }
+    100% {
+        transform: scale(1) translateY(-5px);
+        transform: scale(1) translatex(5px);
+    }
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    padding-top: 50px; /* Adjusted padding to fit the reduced height */
+    text-align: center;
     color: #fff;
-    padding: 1rem;
+    z-index: 1;
+    position: relative;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    padding-top: 20px;
+    z-index: 1;
+    position: relative;
+}
+
+nav li {
+    margin-right: 2rem;
 }
 
 nav a {
     color: #fff;
     text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
 }
 
 nav a:hover {
