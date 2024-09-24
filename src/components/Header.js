@@ -1,6 +1,6 @@
 export const Header = () => `
     <header>
-    <div class="ripple-overlay"></div>
+    <img src="./src/img/logo.png" class="logo" />
     <h1>Kennetic Concepts</h1>
     <nav>
         <ul>
